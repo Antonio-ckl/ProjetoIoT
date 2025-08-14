@@ -23,7 +23,7 @@ class AmbienteEdit extends Component
     }
 
     public function update(){
-        $
+        
     }
     public function render()
     {
