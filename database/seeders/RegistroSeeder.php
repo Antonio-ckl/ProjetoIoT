@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Registro;
 use App\Models\Sensor;
 use Carbon\Carbon;
 use DateTime;
@@ -39,12 +40,24 @@ class RegistroSeeder extends Seeder
                 case 'temperatura':
                     $valor = $faker-> randomFloat(2,15,350);
                     break;
-                    case 'umidade';
+                    case 'umidade':
                     $valor=$faker->randomFloat(2,20,90);
                     break;
-                    case '';
+                    case 'luminosidade':
+                      $valor = $faker->numberBetween(0,1000);
+                      break;
+                      case'presenca':
+                        $valor = $faker->randomFloat(2,0,100);
+                        break;
             }
+            Registro::create([
+              'sensor_id'=>$sensor->id,
+              'valor'=>$valor,
+              'unidade'=>$unidade,
+              'data_hora'=>$dataAtual->format('Y-m-d H:i:s')
+            ]);
         }
+        $dataAtual->addMinutes(10);
       }
     }
 }
