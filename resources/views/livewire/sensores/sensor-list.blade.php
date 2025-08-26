@@ -31,7 +31,7 @@
                             <table class="table table-hover">
                                 <thead class="table-light">
                                 
-                                    <th>Nome</th>
+                                    <th>codigo</th>
                                     <th>Tipo</th>
                                     <th>Descricao</th>
                 
@@ -40,7 +40,7 @@
                                 <tbody>
                                     @foreach ($sensor as $s)
                                         <tr>
-                                            <td>{{ $s->nome }}</td>
+                                            <td>{{ $s->codigo }}</td>
                                             <td>{{ $s->tipo }}</td>
                                             <td>{{ $s->descricao }}</td>
                                             
