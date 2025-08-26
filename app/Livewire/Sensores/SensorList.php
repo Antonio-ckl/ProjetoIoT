@@ -27,6 +27,6 @@ class SensorList extends Component
         ->paginate($this->perPage);
 
 
-        return view('livewire.sensores.sensor-list');
+        return view('livewire.sensores.sensor-list', compact('sensor'));
     }
 }
