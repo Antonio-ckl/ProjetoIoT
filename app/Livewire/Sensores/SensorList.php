@@ -23,7 +23,7 @@ class SensorList extends Component
 
           $sensor= Sensor::where( 'codigo','like', "%{$this->search}%" )
         ->orWhere('tipo', 'like', "%{$this->search}%")
-        ->orWhere('ambiente', 'like', "%{$this->search}%")
+        ->orWhere('descricao', 'like', "%{$this->search}%")
         ->paginate($this->perPage);
 
 

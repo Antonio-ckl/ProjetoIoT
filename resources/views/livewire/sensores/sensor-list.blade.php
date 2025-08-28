@@ -23,6 +23,16 @@
                         {{ session('message') }}
                     </div>
                 @endif
+                 <div class="card">
+                    <div class="shadow rounded-4">
+                        <div class="card-header d-flex justify-content-between align-items-center"
+                            style="background-color: #986745; color:#fffeed">
+                            <h5 class="mb-0">Lista de Sensores</h5>
+
+                            <a class="btn btn-sm" style="background-color:#5e391f;color:#fffeed"
+                                href={{ route('sensor.create') }}>
+                                <i class="bi bi-plus-circle"></i> Novo Sensor</a>
+                        </div>
 
                 <div class="card">
                     <div class="shadow rounded-4">
@@ -34,6 +44,8 @@
                                     <th>codigo</th>
                                     <th>Tipo</th>
                                     <th>Descricao</th>
+                                    <th>Ambiente ID</th>
+                                    <th>Status</th>
                 
                           
                                 </thead>
@@ -42,7 +54,9 @@
                                         <tr>
                                             <td>{{ $s->codigo }}</td>
                                             <td>{{ $s->tipo }}</td>
-                                            <td>{{ $s->descricao }}</td>
+                                            <td>{{ $s->descricao}}</td>
+                                            <td>{{$s->ambiente->id}}</td>
+                                            <td>{{$s->status}}</td>
                                             
                                         </tr>
                                     @endforeach
