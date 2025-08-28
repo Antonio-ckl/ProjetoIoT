@@ -16,7 +16,7 @@ class SensorCreate extends Component
 
 
     protected $rules = [
-        'codigo' => 'required|unique:sensor,codigo',
+        'codigo' => 'required|unique:sensors,codigo',
         'tipo' => 'required'
     ];
 
@@ -28,20 +28,26 @@ class SensorCreate extends Component
 
     public function store()
     {
-        $this->validate();
 
-        $ambiente = Ambiente::create([
-            'ambiente_id' => $this->ambiente_id
-        ]);
+        if ($this->ambiente_id == null) {
+            Session()->flash('error', 'Nao foi possivel encontrar o Id');
+   
+        }
+
+         $this->validate();
+
+ 
 
         Sensor::create([
-            'ambiente_id'=> $ambiente -> ambiente_id,
+            'ambiente_id'=> $this -> ambiente_id,
             'codigo'=> $this->codigo,
-            'tipo'=>$this->descricao,
+            'tipo'=>$this->tipo,
+            'descricao'=>$this->descricao,
             'status'=>$this->status
         ]);
 
         session()->flash('sucess ', 'Cadastro de Sensor realizado com sucesso');
+                 return redirect()->route('sensor.list');
     }
 
 
