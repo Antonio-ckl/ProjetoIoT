@@ -24,7 +24,7 @@ class AmbienteList extends Component
             ->orWhere('descricao', 'like', "%{$this->search}%")
             ->paginate($this->perPage);
 
-        return view('livewire.ambiente-list', compact('ambientes'));
-  
-}
+        return view('livewire.ambiente.ambiente-list', compact('ambientes'));
+
+    }
 }
