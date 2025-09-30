@@ -27,7 +27,7 @@
                                     <th>Status</th>
                                 </thead>
                                 <tbody>
-                                    @foreach ($Ambiente as $a)
+                                    @foreach ($ambiente as $a)
                                         <tr>
                                             <td>{{ $a->id }}</td>
                                             <td>{{ $a->nome }}</td>

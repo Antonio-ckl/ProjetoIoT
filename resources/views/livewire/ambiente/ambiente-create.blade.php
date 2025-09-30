@@ -1,5 +1,10 @@
 <div class="mt-5">
-   
+    @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        @endif
     <div class="d-flex align-items-center justify-content-center vh-100" style="background-color: #fffeed">
         <div class="card shadow-sm p-4" style="width: 500px; background-color: #986745">
             <h2 class="text-center mb-6" style="color:#5e391f; font-family:'Franklin Gothic Medium">Cadastro de
@@ -17,10 +22,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="descricao" class="form-label" style="color: #fffeed">Descricao</label>
-                        <input type="text" class="form-control" id="Descricao" name="Descricao"
-                            placeholder="Insira sua Descricao" wire:model.defer="Descricao"
+                        <input type="string" class="form-control" id="descricao" name="descricao"
+                            placeholder="Insira sua Descricao" wire:model.defer="descricao"
                             style="border-radius: 100px; background-color:#fffeed">
-                        @error('Descricao')
+                        @error('descricao')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
@@ -31,8 +36,8 @@
                             style="border-radius: 100px; background-color:#fffeed">
                             <option hidden>Selecione seu status</option>
 
-                            <option value="Ativo">Ativo</option>
-                            <option value="Disativado">Desativado</option>
+                            <option value="1">Ativo</option>
+                            <option value="0">Desativado</option>
                         </select>
                     </div>
                     
