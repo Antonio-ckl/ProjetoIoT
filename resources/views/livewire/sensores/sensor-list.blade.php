@@ -46,6 +46,7 @@
                                     <th>Descricao</th>
                                     <th>Ambiente ID</th>
                                     <th>Status</th>
+                                    <th>Ações</th>
                 
                           
                                 </thead>
@@ -57,7 +58,8 @@
                                             <td>{{ $s->descricao}}</td>
                                             <td>{{$s->ambiente->id}}</td>
                                             <td>{{$s->status}}</td>
-                                            
+                                            <td><button wire:click="alternarStatus({{ $s->id }})">
+                        {{ $s->status ? 'Desligar' : 'Ligar' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
