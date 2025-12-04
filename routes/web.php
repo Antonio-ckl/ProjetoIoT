@@ -15,11 +15,11 @@ use App\Livewire\Sensores\SensorEdit;
 use App\Livewire\Sensores\SensorList;
 use App\Models\Sensor;
 
-Route::get('ambiente/create', AmbienteCreate::class);
+Route::get('ambiente/create', AmbienteCreate::class)->name('ambiente.create');
 
-Route::get('ambiente/edit', AmbienteEdit::class);
+Route::get('ambiente/edit/{id}', AmbienteEdit::class)->name('ambiente.edit');
 
-Route::get('ambiente/list', AmbienteList::class);
+Route::get('ambiente/list', AmbienteList::class)->name('ambiente.list');
 
 Route::get('/', Dashboard::class);
 
@@ -29,5 +29,5 @@ Route::get('/sensor/create', SensorCreate::class)->name('sensor.create');
 
 Route::get('/sensor/list', SensorList::class)->name('sensor.list');
 
-Route::get('/sensor/edit', SensorEdit::class)->name('sensor.edit');
+Route::get('/sensor/edit/{id}', SensorEdit::class)->name('sensor.edit');
 
