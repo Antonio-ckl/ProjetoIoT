@@ -23,6 +23,11 @@ class AmbienteEdit extends Component
     }
 
     public function update(){
+        $ambiente = Ambiente::findOrFail($this->ambiente_id);
+
+        $ambiente->nome = $this ->nome;
+        $ambiente->descricao = $this->descricao;
+        $ambiente->status = $this -> status;
         
     }
     public function render()

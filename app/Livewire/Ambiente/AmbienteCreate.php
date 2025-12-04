@@ -24,6 +24,7 @@ class AmbienteCreate extends Component
         ]);
 
         session()->flash('success  ', 'Cadastro de Aluno realizado com sucesso');
+        return redirect()->route('ambiente.list');
         }
             public function render()
     {

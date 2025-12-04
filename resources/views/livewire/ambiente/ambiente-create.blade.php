@@ -44,7 +44,13 @@
                     <div class="mb-2">
                         <button type="submit" class="btn w-100"
                             style="background-color: #5e391f; color:#fffeed; border-radius:100px">Cadastrar</button>
-                    </div>
+                        </div> 
+                        <div class="mb-2">
+                        <a class="btn w-100" style="background-color:#5e391f;color:#fffeed;border-top:10px"
+                                href={{ route('ambiente.list') }}>
+                                <i class="bi bi-box-arrow-left"></i> Voltar</a>
+                        </div> 
+                    
                 </form>
             </div>
         </div>

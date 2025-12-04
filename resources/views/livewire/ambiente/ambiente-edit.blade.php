@@ -5,7 +5,7 @@
             <h2 class="text-center mb-6" style="color:#5e391f; font-family:'Franklin Gothic Medium">Cadastro de
                 Ambiente</h2>
             <div class="card-body">
-                <form wire:submit.prevent="store">
+                <form wire:submit.prevent="update">
                     <div class="mb-3">
                         <label for="nome" class="form-label" style="color: #fffeed">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome"
